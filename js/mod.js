@@ -43,6 +43,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+  if(hasUpgrade("L", 11)) gain = gain.add(Decimal.log(player.L.points.max(1),6));
 	return gain
 }
 
